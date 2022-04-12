@@ -1,0 +1,59 @@
+.searchSection select,
+.searchSection button,
+.searchSection input {
+  height: 3.5rem;
+  font-size: 1.4rem;
+  border-radius: 0.4rem;
+  outline: none;
+}
+
+.searchSection select,
+.searchSection input {
+  border: 1px solid gray;
+}
+
+.searchSection input {
+  width: 25rem;
+  padding: 1rem;
+}
+
+.searchSection select {
+  width: 15rem;
+}
+
+.searchSection button {
+  width: 10rem;
+}
+
+@media only screen and (max-width: 770px) {
+  .mobileView .mSearchInput {
+    border: 2px solid #d1d1d1;
+    border-radius: 0.6rem;
+    width: 100%;
+  }
+
+  .mobileView .mSearchInput input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 0 0 0 1rem;
+  }
+
+  .mobileView .mSearchInput button {
+    border: none;
+    outline: none;
+    background-color: #ffffff;
+    width: auto;
+    padding: 0 1rem;
+  }
+
+  .mobileView .mResetBtn {
+    width: auto;
+  }
+
+  .mobileView .mSelectInput select {
+    border: 2px solid #d1d1d1;
+    border-radius: 0.6rem;
+    width: 16rem;
+  }
+}

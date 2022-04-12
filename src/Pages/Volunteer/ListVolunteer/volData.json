@@ -1,0 +1,82 @@
+[
+    {
+        "sno": 1,
+        "name": "Obadias Jeffels",
+        "email": "ojeffels0@vk.com",
+        "dob": "2/9/2022",
+        "gender": "Male",
+        "socailInterest": "augue"
+    },
+    {
+        "sno": 2,
+        "name": "Mandel Moynham",
+        "email": "mmoynham1@dropbox.com",
+        "dob": "11/26/2021",
+        "gender": "Male",
+        "socailInterest": "luctus cum"
+    },
+    {
+        "sno": 3,
+        "name": "Dinah Pietrusiak",
+        "email": "dpietrusiak2@github.io",
+        "dob": "5/14/2021",
+        "gender": "Female",
+        "socailInterest": "nec"
+    },
+    {
+        "sno": 4,
+        "name": "Anton Little",
+        "email": "alittle3@about.com",
+        "dob": "5/12/2021",
+        "gender": "Male",
+        "socailInterest": "tortor eu"
+    },
+    {
+        "sno": 5,
+        "name": "Bud Villar",
+        "email": "bvillar4@mayoclinic.com",
+        "dob": "6/19/2021",
+        "gender": "Male",
+        "socailInterest": "tincidunt"
+    },
+    {
+        "sno": 6,
+        "name": "Lorena Jantet",
+        "email": "ljantet5@aol.com",
+        "dob": "11/18/2021",
+        "gender": "Female",
+        "socailInterest": "proin"
+    },
+    {
+        "sno": 7,
+        "name": "Nadiya L' Estrange",
+        "email": "nl6@wsj.com",
+        "dob": "4/9/2022",
+        "gender": "Female",
+        "socailInterest": "vivamus"
+    },
+    {
+        "sno": 8,
+        "name": "Suki Gallifont",
+        "email": "sgallifont7@zimbio.com",
+        "dob": "1/9/2022",
+        "gender": "Female",
+        "socailInterest": "sapien non"
+    },
+    {
+        "sno": 9,
+        "name": "Lydie Drain",
+        "email": "ldrain8@newyorker.com",
+        "dob": "5/30/2021",
+        "gender": "Female",
+        "socailInterest": "id nulla"
+    },
+    {
+        "sno": 10,
+        "name": "Luci O'Sheerin",
+        "email": "losheerin9@shinystat.com",
+        "dob": "8/4/2021",
+        "gender": "Female",
+        "socailInterest": "aliquam"
+    }
+]

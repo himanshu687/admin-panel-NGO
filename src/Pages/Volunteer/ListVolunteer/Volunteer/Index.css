@@ -1,0 +1,8 @@
+.tableRowData button,
+.volCardData button {
+  font-size: 1.4rem;
+}
+
+.volCardData tr td:first-child {
+  width: 12rem;
+}

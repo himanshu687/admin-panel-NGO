@@ -1,0 +1,7 @@
+.tableContainer {
+  font-size: 1.4rem;
+}
+
+.tableContainer table th {
+  padding: 1rem 0.5rem;
+}

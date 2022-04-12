@@ -1,9 +1,10 @@
 import "./App.css";
+import VolunteerList from "./Pages/Volunteer/ListVolunteer/Index";
 
 function App() {
   return (
-    <div className="App">
-      app is running
+    <div className="my-4">
+      <VolunteerList />
     </div>
   );
 }

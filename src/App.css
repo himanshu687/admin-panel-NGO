@@ -1,3 +1,23 @@
+.desktopView {
+  display: block;
+}
+
+.mobileView {
+  display: none;
+}
+
+@media only screen and (max-width: 770px) {
+  .desktopView {
+    display: none;
+  }
+
+  .mobileView {
+    display: block;
+  }
+}
+
+/*  */
+
 .App {
   text-align: center;
 }
