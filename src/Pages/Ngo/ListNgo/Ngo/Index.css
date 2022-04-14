@@ -1,0 +1,8 @@
+.ngoTableRowData button,
+.ngoCardData button {
+  font-size: 1.4rem;
+}
+
+.ngoCardData tr td:first-child {
+  width: 11.5rem;
+}

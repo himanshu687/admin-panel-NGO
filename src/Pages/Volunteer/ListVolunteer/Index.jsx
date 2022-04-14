@@ -3,27 +3,24 @@ import "./Index.css";
 import HeadTitle from "../../../Components/HeadTitle/Index";
 import LocationPath from "../../../Components/LocationPath";
 import SearchSection from "../../../Components/searchSection/Index";
-import WebUI from "./WebView/Index";
-import MobileView from "./MobileView/Index";
-
+import MobileViewVolunteer from "./MobileView/Index";
+import WebUIVolunteer from "./WebView/Index";
 
 const VolunteerList = () => {
   return (
     <div>
+      <LocationPath path="Volunteer" pathLink="/" subPath="Volunteer List" />
+      <HeadTitle title="Volunteer List" />
       <div className="container">
-        <LocationPath path="Volunteer" subPath="Volunteer List" />
-
-        <HeadTitle title="Volunteer List" />
-
         <SearchSection />
 
-        <div className="tableContainer my-3">
+        <div className="tableContainerVol my-3">
           <div className="desktopView">
-              <WebUI />
+            <WebUIVolunteer />
           </div>
 
           <div className="mobileView">
-            <MobileView />
+            <MobileViewVolunteer />
           </div>
         </div>
       </div>

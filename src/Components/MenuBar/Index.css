@@ -1,0 +1,64 @@
+.menuBarContainer {
+  background-color: #02a39b;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: 0.5s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0%;
+  z-index: 10;
+}
+
+.menuBarBottom:hover {
+  width: 22rem !important;
+}
+
+.menuBarTop button,
+.menuBarTop button:hover {
+  color: white;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  border: none;
+  outline: none;
+  background-color: #02a39b;
+}
+
+.menuBarBottom {
+  margin-top: 2rem;
+  height: calc(100vh - 8rem);
+}
+
+.menuBarItem {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  color: white;
+  font-size: 1.5rem;
+  transition: 0.5s;
+}
+
+.menuBarItem:hover {
+  background-color: #8db6b4;
+  border-left: 3px solid white;
+}
+
+.menuBarBottom .barItemIcon {
+  margin: 0 2rem;
+}
+
+.menuBarBottom .barItemTitle {
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 770px) {
+  .menuBarContainer {
+    /* background-color: #02a39b;
+    height: 100vh;
+    overflow-x: hidden;
+    transition: 0.5s;
+    position: fixed;
+    z-index: 1; */
+  }
+}

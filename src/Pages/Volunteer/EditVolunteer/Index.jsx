@@ -1,53 +1,70 @@
 import React from "react";
+import LocationPath from "../../../Components/LocationPath";
+import HeadTitle from "../../../Components/HeadTitle/Index";
+import { Link } from "react-router-dom";
 import "./Index.css";
 
 const EditVolunteer = () => {
   return (
-    <div className="formContainer">
-      <h2>Edit Volunteer</h2>
-      <div>
-        <form className="volForm">
-          <h4>Volunteer Details</h4>
-          <div className="row my-2">
-            <div className="col-md-6 col-sm-12">
-              <input
-                name="volName"
-                type="text"
-                placeholder="Volunteer Name"
-                autoComplete="off"
-              />
+    <>
+      <LocationPath
+        path="Volunteer"
+        pathLink="volunteer-list"
+        subPath="Edit Volunteer"
+      />
+      <HeadTitle title="Edit Volunteer" backBtn={true} />
+      <div className="container volFormContainer">
+        <h4>Volunteer Details</h4>
+        <div>
+          <form className="volForm">
+            <div className="row my-2">
+              <div className="col-md-6 col-sm-12">
+                <label>Name</label>
+                <input
+                  name="volName"
+                  type="text"
+                  placeholder="Volunteer Name"
+                  autoComplete="off"
+                />
+              </div>
+              <div className="col-md-6 col-sm-12">
+                <label>Email</label>
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                  autoComplete="off"
+                />
+              </div>
             </div>
-            <div className="col-md-6 col-sm-12">
-              <input
-                name="email"
-                type="email"
-                placeholder="Email"
-                autoComplete="off"
-              />
+            <div className="row my-2">
+              <div className="col-md-6 col-sm-12 volDOB">
+                <label>Date of Birth</label>
+                <input
+                  type="date"
+                  placeholder="Date of Birth (Optional)"
+                  autoComplete="off"
+                />
+              </div>
+              <div className="col-md-6 col-sm-12">
+                <label>Social Interests</label>
+                <input
+                  type="text"
+                  placeholder="Social Interests"
+                  autoComplete="off"
+                />
+              </div>
             </div>
-          </div>
-          <div className="row my-2">
-            <div className="col-md-6 col-sm-12 volDOB">
-              <input
-                type="date"
-                placeholder="Date of Birth (Optional)"
-                autoComplete="off"
-              />
+            <div className="submitBtn">
+              <button className="btn btn-success">Save Changes</button>
+              <Link to='/ngo-list'>
+                <button className="btn btn-secondary ms-4">Back</button>
+              </Link>
             </div>
-            <div className="col-md-6 col-sm-12">
-              <input
-                type="text"
-                placeholder="Social Interests"
-                autoComplete="off"
-              />
-            </div>
-          </div>
-          <div className="submitBtn">
-            <button className="btn btn-success">Save Changes</button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

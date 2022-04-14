@@ -1,0 +1,24 @@
+.topNavbar {
+  background-color: #007c75;
+  height: 6rem;
+  padding: 0 1.5rem;
+}
+
+.topNavbar h1 {
+  color: #ffffff;
+  font-size: 1.8rem;
+}
+
+.profileBtn{
+    flex-grow: 0 !important;
+}
+
+.topNavbar .profileBtn button {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 3rem;
+  padding: 1.3rem 1.18rem;
+  text-align: center;
+  outline: none;
+  background: none;
+}

@@ -2,7 +2,7 @@ import React from "react";
 import CardList from "../Volunteer/mobileIndex";
 import volData from "../volData";
 
-const MobileView = () => {
+const MobileViewVolunteer = () => {
   return (
     <div>
       {volData.map((volunteer, index) => {
@@ -12,8 +12,9 @@ const MobileView = () => {
             sno={volunteer.sno}
             name={volunteer.name}
             email={volunteer.email}
-            gender={volunteer.gender}
             dob={volunteer.dob}
+            gender={volunteer.gender}
+            socialInterst={volunteer.socialInterest}
           />
         );
       })}
@@ -21,4 +22,4 @@ const MobileView = () => {
   );
 };
 
-export default MobileView;
+export default MobileViewVolunteer;

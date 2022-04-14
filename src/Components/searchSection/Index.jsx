@@ -1,23 +1,25 @@
 import React from "react";
 import "./Index.css";
 
-const SearchSection = () => {
+const SearchSection = (props) => {
   return (
     <div className="searchSection">
       <form>
         <div className="desktopView">
           <div className="d-flex justify-content-end py-3">
-            <div className="me-3">
-              <select
-                className="form-select"
-                aria-label="Default select example"
-              >
-                <option defaultValue>Select Category</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </div>
+            {props.category && (
+              <div className="me-3">
+                <select
+                  className="form-select"
+                  aria-label="Default select example"
+                >
+                  <option defaultValue>Select Category</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            )}
 
             <div className="me-3">
               <select
@@ -25,9 +27,9 @@ const SearchSection = () => {
                 aria-label="Default select example"
               >
                 <option defaultValue>Select Status</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option value="1">Approved</option>
+                  <option value="2">Pending</option>
+                  <option value="3">Rejected</option>
               </select>
             </div>
 
@@ -55,17 +57,19 @@ const SearchSection = () => {
           </div>
 
           <div className="mSelectInput d-flex justify-content-between align-items-center my-4">
-            <div className="me-2">
-              <select
-                className="form-select"
-                aria-label="Default select example"
-              >
-                <option defaultValue>Select Category</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </div>
+            {props.category && (
+              <div className="me-2">
+                <select
+                  className="form-select"
+                  aria-label="Default select example"
+                >
+                  <option defaultValue>Select Category</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            )}
 
             <div className="ms-2">
               <select

@@ -1,8 +1,8 @@
 import React from "react";
-import TableList from "../Volunteer/webIndex";
+import VolTableList from "../Volunteer/webIndex";
 import volData from "./../volData";
 
-const WebUI = () => {
+const WebUIVolunteer = () => {
   return (
     <div>
       <table className="table table-bordered table-hover text-center my-auto">
@@ -13,7 +13,7 @@ const WebUI = () => {
             <th scope="col">Email</th>
             <th scope="col">Date of Birth</th>
             <th scope="col">Gender</th>
-            <th scope="col">Social Intersts(s)</th>
+            <th scope="col">Social Interest(s)</th>
             <th scope="col">Status</th>
             <th scope="col">#</th>
             <th scope="col">Action</th>
@@ -22,14 +22,14 @@ const WebUI = () => {
         <tbody>
           {volData.map((volunteer, index) => {
             return (
-              <TableList
+              <VolTableList
                 key={index}
                 sno={volunteer.sno}
                 name={volunteer.name}
                 email={volunteer.email}
                 dob={volunteer.dob}
                 gender={volunteer.gender}
-                socialInterst={volunteer.socialInterst}
+                socialInterst={volunteer.socialInterest}
               />
             );
           })}
@@ -39,4 +39,4 @@ const WebUI = () => {
   );
 };
 
-export default WebUI;
+export default WebUIVolunteer;

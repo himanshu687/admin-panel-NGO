@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Index.css";
 
-const TableList = (props) => {
+const VolTableList = (props) => {
   return (
-    <tr className="tableRowData">
+    <tr className="volTableRowData align-middle">
       <td>{props.sno}</td>
       <td>{props.name}</td>
       <td>{props.email}</td>
@@ -15,12 +16,12 @@ const TableList = (props) => {
         <button className="btn btn-success btn-sm">Activate</button>
       </td>
       <td>
-        <button className="btn text-primary">
+        <Link to={`/edit-volunteer`}><button className="btn text-primary">
           <i className="fa-solid fa-pen-to-square"></i>
-        </button>
+        </button></Link>
       </td>
     </tr>
   );
 };
 
-export default TableList;
+export default VolTableList;

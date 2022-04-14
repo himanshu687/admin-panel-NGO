@@ -1,6 +1,6 @@
 .formContainer {
-  height: 100vh;
-  width: 90vw;
+  /* height: 100vh;
+  width: 90vw; */
   margin: 0 auto;
   padding-top: 2rem;
 }
@@ -34,7 +34,7 @@
 }
 
 .ngoForm label {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .ngoForm input[type="file"] {
@@ -60,10 +60,15 @@ input[type="url"] {
   outline: none;
 }
 
-.submitBtn button{
-    width: 100px;
+.formDetails label{
+  font-size: 1.4rem;
+  /* margin-top: 0.8rem; */
+}
+
+.submitBtnNGO button{
+    width: 120px;
     height: 40px;
     border-radius: 5px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin: 30px 0;
 }

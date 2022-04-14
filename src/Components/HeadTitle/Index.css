@@ -1,3 +1,13 @@
-.pageHeadTitle{
-    background-color: #ececec;
+.pageHeadTitle {
+  background-color: #ececec;
+}
+
+.pageHeadTitle button {
+  border: none;
+  border-radius: 0.4rem;
+  outline: none;
+  color: #fff;
+  background-color: #007c75;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.4rem;
 }

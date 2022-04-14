@@ -1,0 +1,112 @@
+[
+    {
+        "sno": 1,
+        "ngoName": "Kwideo",
+        "ownerName": "Violante Jenking",
+        "panNo": "tempus",
+        "registrationNo": 10,
+        "phoneNo": "6457288021",
+        "email": "vjenking0@miibeian.gov.cn",
+        "website": "https://nydailynews.com",
+        "address": "4414 Veith Plaza"
+    },
+    {
+        "sno": 2,
+        "ngoName": "Youtags",
+        "ownerName": "Lezley Mattusov",
+        "panNo": "orci",
+        "registrationNo": 10,
+        "phoneNo": "4524033676",
+        "email": "lmattusov1@gravatar.com",
+        "website": "http://dell.com",
+        "address": "9 Beilfuss Point"
+    },
+    {
+        "sno": 3,
+        "ngoName": "Midel",
+        "ownerName": "Kellsie Jacobsz",
+        "panNo": "amet",
+        "registrationNo": 10,
+        "phoneNo": "8094722681",
+        "email": "kjacobsz2@mac.com",
+        "website": "http://cloudflare.com",
+        "address": "14 Sunbrook Crossing"
+    },
+    {
+        "sno": 4,
+        "ngoName": "Meembee",
+        "ownerName": "Padraig Josskowitz",
+        "panNo": "tincidunt",
+        "registrationNo": 10,
+        "phoneNo": "6743639871",
+        "email": "pjosskowitz3@dedecms.com",
+        "website": "http://istockphoto.com",
+        "address": "735 Fremont Avenue"
+    },
+    {
+        "sno": 5,
+        "ngoName": "Lazzy",
+        "ownerName": "Gretta Hobson",
+        "panNo": "massa",
+        "registrationNo": 10,
+        "phoneNo": "8806068483",
+        "email": "ghobson4@google.nl",
+        "website": "https://bing.com",
+        "address": "10 Northridge Drive"
+    },
+    {
+        "sno": 6,
+        "ngoName": "Jaxbean",
+        "ownerName": "Clary Claridge",
+        "panNo": "erat",
+        "registrationNo": 10,
+        "phoneNo": "5042570598",
+        "email": "cclaridge5@istockphoto.com",
+        "website": "https://woothemes.com",
+        "address": "53105 Clyde Gallagher Plaza"
+    },
+    {
+        "sno": 7,
+        "ngoName": "Demivee",
+        "ownerName": "Wilhelmina Thonger",
+        "panNo": "tincidunt",
+        "registrationNo": 10,
+        "phoneNo": "2605938136",
+        "email": "wthonger6@deliciousdays.com",
+        "website": "http://studiopress.com",
+        "address": "86726 Declaration Park"
+    },
+    {
+        "sno": 8,
+        "ngoName": "Twitterlist",
+        "ownerName": "Eve Gareisr",
+        "panNo": "pharetra",
+        "registrationNo": 10,
+        "phoneNo": "5755839283",
+        "email": "egareisr7@symantec.com",
+        "website": "http://hexun.com",
+        "address": "00752 Gerald Alley"
+    },
+    {
+        "sno": 9,
+        "ngoName": "Riffpath",
+        "ownerName": "Felisha Laurant",
+        "panNo": "nulla",
+        "registrationNo": 10,
+        "phoneNo": "6352948189",
+        "email": "flaurant8@ycombinator.com",
+        "website": "http://cnbc.com",
+        "address": "7 Graedel Drive"
+    },
+    {
+        "sno": 10,
+        "ngoName": "Skivee",
+        "ownerName": "Hulda Lampbrecht",
+        "panNo": "dapibus",
+        "registrationNo": 10,
+        "phoneNo": "6493450237",
+        "email": "hlampbrecht9@cmu.edu",
+        "website": "https://phoca.cz",
+        "address": "7 Stang Street"
+    }
+]
