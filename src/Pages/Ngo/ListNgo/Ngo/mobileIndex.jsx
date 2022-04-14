@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const NGOCardList = (props) => {
     return (
-      <div className="container">
+      <div className="">
         <div className="card ngoCardData mb-4">
           <div className="card-body">
             <table className="table">
@@ -49,9 +50,11 @@ const NGOCardList = (props) => {
               <button className="btn btn-success me-2" type="submit">
                 Activate
               </button>
-              <button className="btn btn-secondary ms-2 px-4" type="submit">
-                Edit
-              </button>
+              <Link to={`/edit-ngo`}>
+                <button className="btn btn-secondary ms-2 px-4" type="submit">
+                  Edit
+                </button>
+              </Link>
             </div>
           </div>
         </div>

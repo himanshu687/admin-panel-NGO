@@ -27,6 +27,11 @@ a:hover {
 }
 
 @media only screen and (max-width: 770px) {
+
+  .mainPageContainer{
+    margin-left: 0 !important;
+  }
+
   .desktopView {
     display: none;
   }

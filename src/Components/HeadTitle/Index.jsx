@@ -11,7 +11,7 @@ const HeadTitle = ({ title, backBtn }) => {
 
   return (
     <div>
-      <div className="pageHeadTitle d-flex justify-content-between my-3 py-4 ps-3">
+      <div className="pageHeadTitle d-flex justify-content-between align-items-center my-3 py-4 ps-3">
         <h2>{title}</h2>
         {backBtn && (
           <button className="me-5" onClick={handleBack}>

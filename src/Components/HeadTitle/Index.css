@@ -2,6 +2,10 @@
   background-color: #ececec;
 }
 
+.pageHeadTitle h2{
+  margin: 0;
+}
+
 .pageHeadTitle button {
   border: none;
   border-radius: 0.4rem;

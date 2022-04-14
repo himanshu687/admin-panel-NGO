@@ -1,6 +1,6 @@
 .topNavbar {
   background-color: #007c75;
-  height: 6rem;
+  min-height: 6rem;
   padding: 0 1.5rem;
 }
 
@@ -9,8 +9,8 @@
   font-size: 1.8rem;
 }
 
-.profileBtn{
-    flex-grow: 0 !important;
+.profileBtn {
+  flex-grow: 0 !important;
 }
 
 .topNavbar .profileBtn button {
@@ -21,4 +21,19 @@
   text-align: center;
   outline: none;
   background: none;
+}
+
+.topNavbar .mobilePanelBtn{
+  border: none;
+  outline: none;
+  background: none;
+  color: #fff;
+}
+
+.topNavbar .navbarMenuBtn {
+  color: #fff;
+}
+
+.topNavbar .navbarMenuBtn:focus {
+  box-shadow: none;
 }

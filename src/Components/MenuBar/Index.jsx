@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Index.css";
 
-const MenuBar = ({ menuIsOpen, setMenuIsOpen }) => {
+const MenuBar = ({ menuIsOpen, setMenuIsOpen, mobilePanelBtn }) => {
   const menuBarItems = [
     {
       path: "/dashboard",
@@ -26,14 +26,20 @@ const MenuBar = ({ menuIsOpen, setMenuIsOpen }) => {
     },
   ];
 
+  const handleClick = () => {
+    setMenuIsOpen(false);
+  };
+
   return (
-    <div>
+    <div className="sideBarWrapper">
       <div
-        className="menuBarContainer"
-        style={{ width: menuIsOpen ? "22rem" : "6rem" }}
+        className={`menuBarContainer ${
+          menuIsOpen ? "menuBarOpen" : "menuBarClose"
+        }`}
       >
         <div className="menuBarTop" style={{ textAlign: "right" }}>
           <button
+            ref={mobilePanelBtn}
             onClick={() => {
               setMenuIsOpen(!menuIsOpen);
             }}
@@ -46,7 +52,12 @@ const MenuBar = ({ menuIsOpen, setMenuIsOpen }) => {
           <div>
             {menuBarItems.map((item, index) => {
               return (
-                <Link to={item.path} key={index} className="menuBarItem ">
+                <Link
+                  to={item.path}
+                  onClick={handleClick}
+                  key={index}
+                  className="menuBarItem "
+                >
                   <span className="barItemIcon text-center">{item.icon}</span>
                   {menuIsOpen && (
                     <span className="barItemTitle">{item.title}</span>

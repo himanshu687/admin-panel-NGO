@@ -6,23 +6,28 @@ import EditVolunteer from "./Pages/Volunteer/EditVolunteer/Index";
 import EditNGO from "./Pages/Ngo/EditNgo/Index";
 import MenuBar from "./Components/MenuBar/Index";
 import NavBar from "./Components/Navbar/Index";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function App() {
-  const [menuIsOpen, setMenuIsOpen] = useState(true);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const mobilePanelBtn = useRef(null);
 
   return (
     <BrowserRouter>
-      <div>
+      <div className="d-flex">
         <div>
-          <MenuBar menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
+          <MenuBar
+            mobilePanelBtn={mobilePanelBtn}
+            menuIsOpen={menuIsOpen}
+            setMenuIsOpen={setMenuIsOpen}
+          />
         </div>
 
         <div
-          className="mainPageContainer"
+          className="mainPageContainer flex-grow-1"
           style={{ marginLeft: menuIsOpen ? "22rem" : "6rem" }}
         >
-          <NavBar />
+          <NavBar mobilePanelBtn={mobilePanelBtn} />
 
           <Routes>
             <Route path="/" element={<h1>HOME</h1>} />
