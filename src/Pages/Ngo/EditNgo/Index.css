@@ -1,6 +1,4 @@
 .formContainer {
-  /* height: 100vh;
-  width: 90vw; */
   margin: 0 auto;
   padding-top: 2rem;
 }
@@ -46,9 +44,10 @@
 }
 
 .ngoForm input[type="text"],
-input[type="tel"],
-input[type="email"],
-input[type="url"] {
+.ngoForm input[type="tel"],
+.ngoForm input[type="email"],
+.ngoForm input[type="url"],
+.ngoForm select {
   width: 100%;
   height: 39px;
   border: solid 2px gray;

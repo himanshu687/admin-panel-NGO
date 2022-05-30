@@ -112,6 +112,19 @@ const EditNGO = () => {
                   <input type="text" placeholder="State" autoComplete="off" />
                 </div>
               </div>
+              <div className="row my-2">
+              <div className="col-md-6 col-sm-12 mt-5">
+                <label>Status</label>
+                <select
+                    aria-label="Default select example"
+                  >
+                    <option defaultValue>Select Status</option>
+                    <option value="1">Approved</option>
+                      <option value="2">Pending</option>
+                      <option value="3">Rejected</option>
+                  </select>
+              </div>
+              </div>
               <div className="submitBtnNGO">
                 <button className="btn btn-success">Save Changes</button>
                 <Link to={`/volunteer-list`}>

@@ -7,6 +7,7 @@ import EditNGO from "./Pages/Ngo/EditNgo/Index";
 import MenuBar from "./Components/MenuBar/Index";
 import NavBar from "./Components/Navbar/Index";
 import { useRef, useState } from "react";
+import Login from "./Pages/Auth/Login/Index";
 
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -30,7 +31,7 @@ function App() {
           <NavBar mobilePanelBtn={mobilePanelBtn} />
 
           <Routes>
-            <Route path="/" element={<h1>HOME</h1>} />
+            <Route path="/" element={<Login />} />
             <Route path="/dashboard" element={<h1>HOME</h1>} />
             <Route path="/volunteer-list" element={<VolunteerList />} />
             <Route path="/edit-volunteer" element={<EditVolunteer />} />
@@ -44,7 +45,7 @@ function App() {
                   <h1
                     style={{
                       paddingTop: "50vh",
-                      fontSize: "1.2rem",
+                      fontSize: "3rem",
                       textAlign: "center",
                     }}
                   >

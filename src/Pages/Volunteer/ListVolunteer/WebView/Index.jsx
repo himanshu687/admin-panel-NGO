@@ -11,9 +11,9 @@ const WebUIVolunteer = () => {
             <th scope="col">S.No.</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
+            <th scope="col">Phone No.</th>
             <th scope="col">Date of Birth</th>
             <th scope="col">Gender</th>
-            <th scope="col">Social Interest(s)</th>
             <th scope="col">Status</th>
             <th scope="col">#</th>
             <th scope="col">Action</th>
@@ -27,9 +27,9 @@ const WebUIVolunteer = () => {
                 sno={volunteer.sno}
                 name={volunteer.name}
                 email={volunteer.email}
+                phone={volunteer.phone}
                 dob={volunteer.dob}
                 gender={volunteer.gender}
-                socialInterst={volunteer.socialInterest}
               />
             );
           })}

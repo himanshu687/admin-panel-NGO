@@ -21,16 +21,16 @@ const CardList = (props) => {
                 <td>{props.email}</td>
               </tr>
               <tr>
+                <td className="text-muted border-end">Phone No.</td>
+                <td>{props.phone}</td>
+              </tr>
+              <tr>
                 <td className="text-muted border-end">Date of Birth</td>
                 <td>{props.dob}</td>
               </tr>
               <tr>
                 <td className="text-muted border-end">Gender</td>
                 <td>{props.gender}</td>
-              </tr>
-              <tr>
-                <td className="text-muted border-end">Social Interest(s)</td>
-                <td>Child Welfare</td>
               </tr>
               <tr>
                 <td className="text-muted border-end">Status</td>
@@ -42,9 +42,11 @@ const CardList = (props) => {
             <button className="btn btn-success me-2" type="submit">
               Activate
             </button>
-            <Link to={`/edit-volunteer`}><button className="btn btn-secondary ms-2 px-4" type="submit">
-              Edit
-            </button></Link>
+            <Link to={`/edit-volunteer`}>
+              <button className="btn btn-secondary ms-2 px-4" type="submit">
+                Edit
+              </button>
+            </Link>
           </div>
         </div>
       </div>

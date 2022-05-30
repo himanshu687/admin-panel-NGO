@@ -38,6 +38,14 @@ const EditVolunteer = () => {
               </div>
             </div>
             <div className="row my-2">
+              <div className="col-md-6 col-sm-12">
+                <label>Phone No.</label>
+                <input
+                  type="text"
+                  placeholder="Phone No."
+                  autoComplete="off"
+                />
+              </div>
               <div className="col-md-6 col-sm-12 volDOB">
                 <label>Date of Birth</label>
                 <input
@@ -46,6 +54,8 @@ const EditVolunteer = () => {
                   autoComplete="off"
                 />
               </div>
+            </div>
+            <div className="row my-2">
               <div className="col-md-6 col-sm-12">
                 <label>Social Interests</label>
                 <input
@@ -54,10 +64,21 @@ const EditVolunteer = () => {
                   autoComplete="off"
                 />
               </div>
+              <div className="col-md-6 col-sm-12 volStatus">
+                <label>Status</label>
+                <select
+                    aria-label="Default select example"
+                  >
+                    <option defaultValue>Select Status</option>
+                    <option value="1">Approved</option>
+                      <option value="2">Pending</option>
+                      <option value="3">Rejected</option>
+                  </select>
+              </div>
             </div>
             <div className="submitBtn">
               <button className="btn btn-success">Save Changes</button>
-              <Link to='/ngo-list'>
+              <Link to="/ngo-list">
                 <button className="btn btn-secondary ms-4">Back</button>
               </Link>
             </div>

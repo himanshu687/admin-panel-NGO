@@ -12,9 +12,9 @@ const MobileViewVolunteer = () => {
             sno={volunteer.sno}
             name={volunteer.name}
             email={volunteer.email}
+            phone={volunteer.phone}
             dob={volunteer.dob}
             gender={volunteer.gender}
-            socialInterst={volunteer.socialInterest}
           />
         );
       })}

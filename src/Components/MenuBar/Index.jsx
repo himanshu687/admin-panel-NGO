@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Index.css";
 
@@ -26,13 +26,33 @@ const MenuBar = ({ menuIsOpen, setMenuIsOpen, mobilePanelBtn }) => {
     },
   ];
 
+  let closeRef = useRef();
+
+  useEffect(() => {
+    let handler = (event) => {
+      if (!closeRef?.current?.contains(event?.target)) {
+        setMenuIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
+
   const handleClick = () => {
-    setMenuIsOpen(false);
+    setTimeout(() => {
+      setMenuIsOpen(false);
+    }, 250);
   };
 
   return (
     <div className="sideBarWrapper">
+      <div className={`${menuIsOpen && "menuBarBackground"}`}></div>
       <div
+        ref={closeRef}
         className={`menuBarContainer ${
           menuIsOpen ? "menuBarOpen" : "menuBarClose"
         }`}
@@ -49,20 +69,22 @@ const MenuBar = ({ menuIsOpen, setMenuIsOpen, mobilePanelBtn }) => {
         </div>
 
         <div className="menuBarBottom d-flex flex-column justify-content-between">
-          <div>
+          <div className="menuItemWrapper">
             {menuBarItems.map((item, index) => {
               return (
-                <Link
-                  to={item.path}
-                  onClick={handleClick}
-                  key={index}
-                  className="menuBarItem "
-                >
-                  <span className="barItemIcon text-center">{item.icon}</span>
-                  {menuIsOpen && (
-                    <span className="barItemTitle">{item.title}</span>
-                  )}
-                </Link>
+                <div key={index}>
+                  <Link
+                    to={item.path}
+                    onClick={handleClick}
+                    className="menuBarItem"
+                  >
+                    <span className="barItemIcon text-center">{item.icon}</span>
+                    {menuIsOpen && (
+                      <span className="barItemTitle">{item.title}</span>
+                    )}
+                  </Link>
+                  {menuIsOpen && <hr />}
+                </div>
               );
             })}
           </div>
