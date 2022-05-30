@@ -33,7 +33,6 @@ export const otpVerification = (userOtp, navigate) => {
   window.confirmationResult
     .confirm(userOtp)
     ?.then((result) => {
-      console.log("result", result);
       const firebaseToken = result?.user?.accessToken;
 
       document.cookie = `firebaseToken=${firebaseToken};domain=localhost;secure`;

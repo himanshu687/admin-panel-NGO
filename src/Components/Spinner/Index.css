@@ -1,0 +1,14 @@
+.spinner {
+  height: 60vh;
+  display: grid;
+  place-items: center;
+}
+
+.imageSpinnerContainer {
+  width: 75px;
+  height: 75px;
+}
+
+.imageSpinnerContainer > img {
+  width: 100%;
+}

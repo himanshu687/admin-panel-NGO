@@ -1,6 +1,7 @@
 import axios from "axios";
 import { deleteCookie } from "../Utils/cookie";
 import { exchangeTokenController } from "./Exchange/controller";
+const URL = process.env.REACT_APP_API_URL;
 
 const ApiClient = axios.create({
   baseURL: `https://${URL}`,
@@ -41,12 +42,12 @@ ApiClient.interceptors.response.use(
     return response;
   },
   (error) => {
-    if (error.response.status === 401) {
+    if (error?.response?.status === 401) {
       window.location.href = "/login";
       deleteCookie("firebaseToken");
       localStorage.clear();
     }
-    if (error.response.status === 500) {
+    if (error?.response?.status === 500) {
       return console.log("Server Error !");
     }
     throw error;

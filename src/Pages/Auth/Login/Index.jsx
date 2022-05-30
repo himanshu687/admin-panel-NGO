@@ -5,6 +5,7 @@ import {
   onSignInSubmit,
   otpVerification,
 } from "../../../Firebase/Auth";
+import { deleteCookie } from "../../../Utils/cookie";
 import "./Index.css";
 
 const Login = ({ setFlag }) => {
@@ -12,21 +13,29 @@ const Login = ({ setFlag }) => {
   const [otp, setOtp] = useState("");
   const navigate = useNavigate();
 
-  const inputEvent = (e) => {
-    if (e.target.value.length === 11) {
-      setContact(e.target.value.slice(0, 10));
-    } else {
-      setContact(e.target.value);
-    }
-  };
+  // const inputEvent = (e) => {
+  //   if (e.target.value.length === 11) {
+  //     setContact(e.target.value.slice(0, 10));
+  //   } else {
+  //     setContact(e.target.value);
+  //   }
+  // };
 
   useEffect(() => {
-    configureRecaptcha();
+    localStorage.clear();
+    deleteCookie("firebaseToken");
 
+    configureRecaptcha();
     return () => {
       window.recaptchaVerifier.clear();
     };
   }, []);
+
+  const handleChange = (e) => {
+    if (e.target.value.length > e.target.maxLength) {
+      e.target.value = e.target.value.slice(0, e.target.maxLength);
+    }
+  };
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -42,13 +51,14 @@ const Login = ({ setFlag }) => {
     <div>
       <div className="loginMainContainer">
         <div className="loginContainer">
-          <h2 className="mt-4">LOGIN</h2>
+          <h1 className="mt-4">LOGIN</h1>
           <form onSubmit={handleLogin} className="mt-5">
             <div className="loginInputContainer">
               <div className="loginInput">
                 <input
                   onChange={(e) => setContact(e.target.value)}
-                  onInput={inputEvent}
+                  onInput={handleChange}
+                  maxLength="10"
                   placeholder="Phone Number"
                   type="number"
                 />
@@ -57,6 +67,7 @@ const Login = ({ setFlag }) => {
               <button
                 type="button"
                 id="sign-in-button"
+                disabled={contact.length !== 10}
                 onClick={handleOtpClick}
                 className="btn btn-secondary w-100"
               >
@@ -66,6 +77,8 @@ const Login = ({ setFlag }) => {
               <div className="loginInput">
                 <input
                   onChange={(e) => setOtp(e.target.value)}
+                  onInput={handleChange}
+                  maxLength="6"
                   placeholder="OTP"
                   type="number"
                 />

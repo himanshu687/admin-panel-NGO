@@ -1,23 +1,23 @@
 import React from "react";
 import CardList from "../Ngo/mobileIndex";
-import NGOData from "../ngoData";
-
-const MobileViewNGO = () => {
+const MobileViewNGO = ({ ngos, changeNgoStatus }) => {
   return (
     <div>
-      {NGOData.map((ngo, index) => {
+      {ngos.map((ngo, index) => {
         return (
           <CardList
-            key={index}
-            sno={ngo.sno}
-            ngoName={ngo.ngoName}
-            ownerName={ngo.ownerName}
-            panNo={ngo.panNo}
-            registrationNo={ngo.registrationNo}
-            phoneNo={ngo.phoneNo}
-            email={ngo.email}
-            website={ngo.website}
-            address={ngo.address}
+            key={ngo?.ngoExternalId}
+            sno={index + 1}
+            // ngoExternalId={ngo?.ngoExternalId}
+            // ngoName={ngo?.ngoName}
+            // phoneNo={ngo?.phoneNo}
+            // address={ngo?.address}
+            // city={ngo?.city}
+            // state={ngo?.state}
+            // pincode={ngo?.pinCode}
+            // status={ngo?.status}
+            ngo={ngo}
+            changeNgoStatus={changeNgoStatus}
           />
         );
       })}

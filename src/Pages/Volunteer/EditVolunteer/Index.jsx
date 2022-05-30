@@ -3,10 +3,11 @@ import LocationPath from "../../../Components/LocationPath";
 import HeadTitle from "../../../Components/HeadTitle/Index";
 import { Link } from "react-router-dom";
 import "./Index.css";
+import MainUI from "../../Auth/MainUI/Index";
 
 const EditVolunteer = () => {
   return (
-    <>
+    <MainUI>
       <LocationPath
         path="Volunteer"
         pathLink="volunteer-list"
@@ -85,7 +86,7 @@ const EditVolunteer = () => {
           </form>
         </div>
       </div>
-    </>
+    </MainUI>
   );
 };
 

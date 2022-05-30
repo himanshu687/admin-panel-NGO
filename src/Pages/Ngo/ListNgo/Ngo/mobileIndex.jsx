@@ -1,65 +1,92 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const NGOCardList = (props) => {
-    return (
-      <div className="">
-        <div className="card ngoCardData mb-4">
-          <div className="card-body">
-            <table className="table">
-              <tbody>
-                <tr>
-                  <td className="text-muted border-end">Sr. No.</td>
-                  <td>{props.sno}</td>
-                </tr>
-                <tr>
-                  <td className="text-muted border-end">NGO Name</td>
-                  <td>{props.ngoName}</td>
-                </tr>
-                <tr>
-                  <td className="text-muted border-end">Owner Name</td>
-                  <td>{props.ownerName}</td>
-                </tr>
-                <tr>
-                  <td className="text-muted border-end">PAN No.</td>
-                  <td>{props.panNo}</td>
-                </tr>
-                <tr>
-                  <td className="text-muted border-end">Registration No.</td>
-                  <td>{props.registrationNo}</td>
-                </tr>
-                <tr>
-                  <td className="text-muted border-end">Phone No.</td>
-                  <td>{props.phoneNo}</td>
-                </tr>
-                <tr>
-                  <td className="text-muted border-end">email</td>
-                  <td>{props.email}</td>
-                </tr>
-                <tr>
-                  <td className="text-muted border-end">Website</td>
-                  <td>{props.website}</td>
-                </tr>
-                <tr>
-                  <td className="text-muted border-end">Address</td>
-                  <td>{props.address}</td>
-                </tr>
-              </tbody>
-            </table>
-            <div className="cardBtns text-end">
-              <button className="btn btn-success me-2" type="submit">
+const NGOCardList = ({ sno, ngo, changeNgoStatus }) => {
+  const navigate = useNavigate();
+
+  const handleStatusChange = () => {
+    const status = ngo.status;
+
+    if (status === "APPROVE") {
+      changeNgoStatus(ngo.ngoExternalId, "DECLINE");
+    } else if (status === "DECLINE") {
+      changeNgoStatus(ngo.ngoExternalId, "APPROVE");
+    } else if (status === "PENDING") {
+      changeNgoStatus(ngo.ngoExternalId, "APPROVE");
+    }
+  };
+
+  const handleEditClick = () => {
+    navigate("/edit-ngo", {
+      state: { ngo },
+    });
+  };
+
+  return (
+    <div className="">
+      <div className="card ngoCardData mb-4">
+        <div className="card-body">
+          <table className="table">
+            <tbody>
+              <tr>
+                <td className="text-muted border-end">Sr. No.</td>
+                <td>{sno}</td>
+              </tr>
+              <tr>
+                <td className="text-muted border-end">NGO Name</td>
+                <td>{ngo.ngoName}</td>
+              </tr>
+              <tr>
+                <td className="text-muted border-end">Phone No.</td>
+                <td>{ngo.phoneNo}</td>
+              </tr>
+              <tr>
+                <td className="text-muted border-end">Address</td>
+                <td>{`${ngo.address}, ${ngo.city}, ${ngo.state}, ${ngo.pinCode}`}</td>
+              </tr>
+              <tr>
+                <td className="text-muted border-end">Status</td>
+                <td
+                  className={
+                    (ngo.status === "APPROVE" && "text-success") ||
+                    (ngo.status === "DECLINE" && "text-danger") ||
+                    (ngo.status === "PENDING" && "text-warning")
+                  }
+                >
+                  {ngo.status}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div className="cardBtns text-end">
+            {(ngo.status === "PENDING" || ngo.status === "DECLINE") && (
+              <button
+                onClick={handleStatusChange}
+                className="btn btn-success me-2"
+              >
                 Activate
               </button>
-              <Link to={`/edit-ngo`}>
-                <button className="btn btn-secondary ms-2 px-4" type="submit">
-                  Edit
-                </button>
-              </Link>
-            </div>
+            )}
+            {ngo.status === "APPROVE" && (
+              <button
+                onClick={handleStatusChange}
+                className="btn btn-danger me-2"
+              >
+                Decline
+              </button>
+            )}
+            <button
+              onClick={handleEditClick}
+              className="btn btn-secondary ms-2 px-4"
+              type="submit"
+            >
+              Edit
+            </button>
           </div>
         </div>
       </div>
-    );
+    </div>
+  );
 };
 
 export default NGOCardList;

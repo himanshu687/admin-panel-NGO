@@ -1,30 +1,59 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Index.css";
 
-const NgoTableList = (props) => {
+const NgoTableList = ({ sno, ngo, changeNgoStatus }) => {
+  const navigate = useNavigate();
+
+  const handleStatusChange = () => {
+    const status = ngo.status;
+
+    if (status === "APPROVE") {
+      changeNgoStatus(ngo.ngoExternalId, "DECLINE");
+    } else if (status === "DECLINE") {
+      changeNgoStatus(ngo.ngoExternalId, "APPROVE");
+    } else if (status === "PENDING") {
+      changeNgoStatus(ngo.ngoExternalId, "APPROVE");
+    }
+  };
+
+  const handleEditClick = () => {
+    navigate("/edit-ngo", {
+      state: { ngo },
+    });
+  };
+
   return (
     <tr className="ngoTableRowData  align-middle">
-      <td>{props.sno}</td>
-      {/* <td>{props.sno}</td> image*/}
-      <td>{props.ngoName}</td>
-      <td>{props.ownerName}</td>
-      {/* <td>{props.panNo}</td> */}
-      <td>{props.registrationNo}</td>
-      <td>{props.phoneNo}</td>
-      <td>{props.email}</td>
-      {/* <td>{props.website}</td> */}
-      <td>{props.address}</td>
-      <td>Approved</td>
-      <td>
-        <button className="btn btn-success btn-sm">Activate</button>
+      <td>{sno}</td>
+      <td>{ngo.ngoName}</td>
+      <td>{ngo.phoneNo}</td>
+      <td>{`${ngo.address}, ${ngo.city}, ${ngo.state}, ${ngo.pinCode}`}</td>
+      <td
+        className={
+          (ngo.status === "APPROVE" && "text-success") ||
+          (ngo.status === "DECLINE" && "text-danger") ||
+          (ngo.status === "PENDING" && "text-warning")
+        }
+      >
+        {ngo.status}
+      </td>
+      <td onClick={handleStatusChange}>
+        {(ngo.status === "PENDING" || ngo.status === "DECLINE") && (
+          <button className="btn btn-success btn-sm">Activate</button>
+        )}
+        {ngo.status === "APPROVE" && (
+          <button className="btn btn-danger btn-sm">Decline</button>
+        )}
       </td>
       <td>
-        <Link to={`/edit-ngo`}>
-          <button className="btn text-primary">
-            <i className="fa-solid fa-pen-to-square"></i>
-          </button>
-        </Link>
+        <button
+          onClick={handleEditClick}
+          className="btn text-primary"
+          type="button"
+        >
+          <i className="fa-solid fa-pen-to-square"></i>
+        </button>
       </td>
     </tr>
   );

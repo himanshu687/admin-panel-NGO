@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Index.css";
 
 const MenuBar = ({ menuIsOpen, setMenuIsOpen, mobilePanelBtn }) => {
@@ -27,6 +27,7 @@ const MenuBar = ({ menuIsOpen, setMenuIsOpen, mobilePanelBtn }) => {
   ];
 
   let closeRef = useRef();
+  const navigate = useNavigate();
 
   useEffect(() => {
     let handler = (event) => {
@@ -46,6 +47,11 @@ const MenuBar = ({ menuIsOpen, setMenuIsOpen, mobilePanelBtn }) => {
     setTimeout(() => {
       setMenuIsOpen(false);
     }, 250);
+  };
+
+  const handleLogout = () => {
+    navigate("/");
+    handleClick();
   };
 
   return (
@@ -89,12 +95,12 @@ const MenuBar = ({ menuIsOpen, setMenuIsOpen, mobilePanelBtn }) => {
             })}
           </div>
 
-          <Link to="/logout" className="menuBarItem">
+          <div onClick={handleLogout} className="menuBarItem">
             <span className="barItemIcon text-center">
               <i className="fa-solid fa-arrow-right-from-bracket"></i>
             </span>
             {menuIsOpen && <span className="barItemTitle">Logout</span>}
-          </Link>
+          </div>
         </div>
       </div>
     </div>
