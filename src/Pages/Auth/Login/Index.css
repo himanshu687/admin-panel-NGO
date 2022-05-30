@@ -1,0 +1,46 @@
+.loginMainContainer {
+  /* width: 100vw; */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.loginContainer {
+  max-width: 400px;
+  width: 100%;
+  min-height: 300px;
+  border: 2px solid gray;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginContainer form {
+  width: 70%;
+}
+
+.loginInputContainer .loginInput {
+  margin-bottom: 1rem;
+}
+
+.loginInputContainer button{
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.loginInputContainer .loginInput input {
+  width: 100%;
+  height: 3.4rem;
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  padding: 0 1.2rem;
+}
+
+.loginContainer .loginBtn button{
+    font-size: 1.5rem;
+}
